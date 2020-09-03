@@ -1,0 +1,35 @@
+.box {
+    margin-top: 15px;
+}
+.on_off {
+    padding: 10px 10px;
+    border: 1px solid black;
+    margin-left: 5px;
+}
+
+.lightbulb {
+    margin-left: 10px;
+    padding: 5px 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.lightbulb_green {
+    background-color: green;
+
+}
+
+.lightbulb_red {
+    background-color: red;
+
+}
+
+.green {
+    background-color: green;
+
+}
+
+.red {
+    background-color: red;
+
+}

@@ -10,7 +10,8 @@ export const OnOff = (props: OnOffType) => {
     let [on, setOn] = useState(true);
 
     const boxStyle = {
-        marginTop: "15px"
+        marginTop: "15px",
+        marginBottom: "15px",
     }
 
     const onStyle = {

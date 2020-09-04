@@ -7,7 +7,16 @@ function UnRating() {
         <div>
             <Star selected={value > 0}/>
             <button onClick={() => {
-                value === 0 ? setValue(1) : setValue(0)
+                if (value === 0){
+                    setValue(1)
+                }
+                if (value >= 1){
+                    setValue(1)
+                }
+                if (value === 1) {
+                    setValue(0)
+                }
+                // value === 0 ? setValue(1) : setValue(0)
             }}>1
             </button>
             <Star selected={value > 1}/>
@@ -59,11 +68,12 @@ type StarPropsType = {
 }
 
 function Star(props: StarPropsType) {
-    if (props.selected) {
-        return <span><b>star </b></span>
-    } else {
-        return <span>star </span>
-    }
+    return props.selected ? <span><b>start</b></span> : <span>start</span>
+    // if (props.selected) {
+    //     return <span><b>star</b></span>
+    // } else {
+    //     return <span>star</span>
+    // }
 }
 
 export default UnRating

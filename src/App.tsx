@@ -1,33 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
-import Rating from "./components/Rating/Rating";
+import Rating, {RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import UnControlledAccordion from "./components/UnControlledAccordion/UnControlledAccordion";
 import UnRating from "./components/UnRating/UnRating";
+import {UnControlledOnOff} from "./components/OnOff/UnControlledOnOff";
 
 function App() {
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
+    let [on, setOn] = useState<boolean>(true);
     return (
-        <div>
+        <div className={"App"}>
             <PageTitle title={'This is APP component'}/>
             <PageTitle title={'My friends'}/>
             Article 1
 
-            <Accordion titleValue={'Menu'} collapsed = {true}/>
-            <Accordion titleValue={'Users'} collapsed = {false}/>
+            <Accordion titleValue={'Menu'}  collapsed={accordionCollapsed} onClick={() => setAccordionCollapsed(!accordionCollapsed)}/>
+            <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onClick={() => setAccordionCollapsed(!accordionCollapsed)}/>
 
             Article 2
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            {/*<Rating value={0}/>*/}
+            {/*<Rating value={1}/>*/}
+            {/*<Rating value={2}/>*/}
+            {/*<Rating value={3}/>*/}
+            {/*<Rating value={4}/>*/}
+            {/*<Rating value={5}/>*/}
             Article 3
-            <OnOff />
-            <OnOff/>
-            <OnOff />
-
+            <UnControlledOnOff onChange={setOn}/> {on.toString()}
+            <UnControlledOnOff onChange={setOn}/> {on.toString()}
+            <OnOff on={on} onClick={setOn}/>
+            <OnOff on={on} onClick={setOn}/>
             Article 4
             <UnControlledAccordion titleValue={'Menu'}/>
             <UnControlledAccordion titleValue={'User'}/>

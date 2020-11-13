@@ -1,43 +1,55 @@
 import React, {useState} from "react";
 import s from './OnOff.module.css'
 
+type PropsType = {
 
-type OnOffType = {
-    on: boolean
-    onClick: (setOn: boolean) => void
+    onChange: (on: boolean) => void
 }
 
-export const OnOff = (props: OnOffType) => {
+export const UnControlledOnOff = (props: PropsType) => {
+
+    let [on, setOn] = useState(true);
 
     const boxStyle = {
         marginTop: "15px",
         marginBottom: "15px",
-    };
+    }
+
     const onStyle = {
         padding: "10px 10px",
         border: "1px solid black",
         marginLeft: "5px",
-        backgroundColor: props.on ? "green": "white",
+        backgroundColor: on ? "green": "white",
     };
+
     const offStyle = {
         padding: "10px 10px",
         border: "1px solid black",
         marginLeft: "5px",
-        backgroundColor: props.on ? "white" : "red",
+        backgroundColor: on ? "white" : "red",
     };
+
     const lightbulbStyle = {
         marginLeft: "10px",
         padding: "5px 15px",
         border: "1px solid black",
         borderRadius: "50%",
-        backgroundColor: props.on ? "green" : "red"
+        backgroundColor: on ? "green" : "red"
     };
 
+    const onClicked = () => {
+        setOn(true)
+        props.onChange(true)
+    }
+    const offClicked = () => {
+        setOn(false)
+        props.onChange(false)
+    }
 
     return (
         <div style={boxStyle}>
-            <span style={onStyle} onClick={ () => {props.onClick(true)} }>On</span>
-            <span style={offStyle} onClick={ () => {props.onClick(false)} }>Off</span>
+            <span style={onStyle} onClick={ onClicked }>On</span>
+            <span style={offStyle} onClick={ offClicked }>Off</span>
             <span style={lightbulbStyle}></span>
         </div>
         // <div className={s.box}>

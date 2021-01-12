@@ -3,7 +3,7 @@ import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import Rating, {RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import UnControlledAccordion from "./components/UnControlledAccordion/UnControlledAccordion";
+import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
 import UnRating from "./components/UnRating/UnRating";
 import {UnControlledOnOff} from "./components/OnOff/UnControlledOnOff";
 
@@ -18,8 +18,22 @@ function App() {
             <PageTitle title={'My friends'}/>
             Article 1
 
-            <Accordion titleValue={'Menu'}  collapsed={accordionCollapsed} onClick={() => setAccordionCollapsed(!accordionCollapsed)}/>
-            <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onClick={() => setAccordionCollapsed(!accordionCollapsed)}/>
+            <Accordion
+                titleValue={'Menu'}
+                collapsed={accordionCollapsed}
+                onClick={() => setAccordionCollapsed(!accordionCollapsed)}
+                items={[]}
+                color={'black'}
+                onChange={()=>{}}
+            />
+            <Accordion
+                titleValue={'Users'}
+                collapsed={accordionCollapsed}
+                onClick={() => setAccordionCollapsed(!accordionCollapsed)}
+                items={[]}
+                color={'black'}
+                onChange={()=>{}}
+            />
 
             Article 2
             <Rating value={ratingValue} onClick={setRatingValue}/>
@@ -35,8 +49,8 @@ function App() {
             <OnOff on={on} onClick={setOn}/>
             <OnOff on={on} onClick={setOn}/>
             Article 4
-            <UnControlledAccordion titleValue={'Menu'}/>
-            <UnControlledAccordion titleValue={'User'}/>
+            <UnControlledAccordion titleValue={'Menu'} items={[]} onClick={()=>{}}/>
+            <UnControlledAccordion titleValue={'User'} items={[]} onClick={()=>{}}/>
 
             Article 5
             <UnRating/>

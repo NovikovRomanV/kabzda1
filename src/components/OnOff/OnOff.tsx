@@ -2,8 +2,12 @@ import React, {useState} from "react";
 import s from './OnOff.module.css'
 
 
-type OnOffType = {
+export type OnOffType = {
     on: boolean
+    /**
+     * Callback that is calle when clicked
+     * @param setOn is setOn of clicked
+     */
     onClick: (setOn: boolean) => void
 }
 

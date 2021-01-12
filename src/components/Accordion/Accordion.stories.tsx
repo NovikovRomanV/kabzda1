@@ -1,20 +1,90 @@
 import React, {useState} from "react";
-import {Accordion} from "./Accordion";
+import {Accordion, AccordionPropsType} from "./Accordion";
 import {action} from "@storybook/addon-actions";
+import {Story} from "@storybook/react/types-6-0";
 
-
+const GetCategoryObj = (categoryName: string) => ({
+    table: {
+        category: categoryName
+    }
+})
 
 export default {
-    title: "Accordion",
-    component: Accordion
+    title: "components/Accordion",
+    component: Accordion,
+    argTypes: {
+        color: {
+            control: 'color',
+            table: {
+                category: 'Colors'
+            },
+        },
+        onClick: {
+           ...GetCategoryObj('Events')
+        },
+        onChange: {
+            ...GetCategoryObj('Events')
+        },
+        titleValue: {
+            ...GetCategoryObj('Main')
+        },
+        collapsed: {
+            ...GetCategoryObj('Main')
+        },
+        items: {
+            ...GetCategoryObj('Main')
+        },
+    },
 }
 
-export const UserCollapsedMode = () => <Accordion titleValue={"User"} collapsed={true} onClick={action("click")}/>
-export const MenuUnCollapsedMode = () => <Accordion titleValue={"Menu"} collapsed={false} onClick={action("click")} />
+const callback = action("accordion mode change event fired")
+const onClickCallback = action("some item was clicked")
+const callbacks = {onChange: callback,  onClick:onClickCallback}
 
-export const ModeChanging = () => {
+const Template: Story<AccordionPropsType> = (args) => <Accordion {...args}/>
+
+export const UserCollapsedMode = Template.bind({});
+UserCollapsedMode.args = {
+    ...callbacks,
+    titleValue: "User",
+    collapsed: true,
+    items: [
+        {title: 'Dimych', value: 1},
+        {title: 'Valera', value: 2},
+        {title: 'Artem', value: 3},
+        {title: 'Viktor', value: 4},
+    ],
+}
+
+export const MenuUnCollapsedMode = Template.bind({});
+MenuUnCollapsedMode.args = {
+    ...callbacks,
+    titleValue: "Menu",
+    collapsed: false,
+    items: [
+        {title: 'Dimych', value: 1},
+        {title: 'Valera', value: 2},
+        {title: 'Artem', value: 3},
+        {title: 'Viktor', value: 4},
+    ],
+}
+
+export const ModeChanging: Story<AccordionPropsType> = (args) => {
 
     let [value, setValue] = useState<boolean>(true)
 
-    return <Accordion titleValue={"User"} collapsed={value} onClick={() => setValue(!value)} />
+    return <Accordion {...args} collapsed={value} onChange={() => setValue(!value)} />
+}
+
+ModeChanging.args = {
+    titleValue: "User",
+    items: [
+        {title: 'Dimych', value: 1},
+        {title: 'Valera', value: 2},
+        {title: 'Artem', value: 3},
+        {title: 'Viktor', value: 4},
+    ],
+    onClick: (value) => {
+        alert(`user with ID ${value} should be happy`)
+    }
 }

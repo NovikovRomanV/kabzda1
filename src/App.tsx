@@ -49,8 +49,8 @@ function App() {
             <OnOff on={on} onClick={setOn}/>
             <OnOff on={on} onClick={setOn}/>
             Article 4
-            <UnControlledAccordion titleValue={'Menu'} items={[]} onClick={()=>{}}/>
-            <UnControlledAccordion titleValue={'User'} items={[]} onClick={()=>{}}/>
+            <UnControlledAccordion titleValue={'Menu'} />
+            <UnControlledAccordion titleValue={'User'} />
 
             Article 5
             <UnRating/>

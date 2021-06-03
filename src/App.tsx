@@ -6,12 +6,14 @@ import {OnOff} from "./components/OnOff/OnOff";
 import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
 import UnRating from "./components/UnRating/UnRating";
 import {UnControlledOnOff} from "./components/OnOff/UnControlledOnOff";
+import {Select} from "./components/Select/Select";
 
 function App() {
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
     let [on, setOn] = useState<boolean>(true);
+
     return (
         <div className={"App"}>
             <PageTitle title={'This is APP component'}/>
@@ -54,6 +56,8 @@ function App() {
 
             Article 5
             <UnRating/>
+
+            <Select value={"2"}  onChange={()=>{}} items={[{title: "Minsk", value: "1"}, {title: "Moscow", value: "2"}, {title: "Kiev", value: "3"}]}/>
         </div>
     );
 }

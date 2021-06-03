@@ -62,7 +62,7 @@ function AccordionTitle(props: AccordionTitlePropsType) {
     return (
         <h3
             style={{color: props.color ? props.color : "black"}}
-            onClick={(e) => props.onChange()} >{props.title}</h3>
+            onClick={() => props.onChange()} >{props.title}</h3>
     )
 }
 

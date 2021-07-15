@@ -13,7 +13,7 @@ type SelectPropsType = {
 
 }
 
-export function Select(props: SelectPropsType) {
+export function SelectMemo(props: SelectPropsType) {
     const [active, setActive] = useState(false)
 
     const selectedItem = props.items.find(i => i.value === props.value)
@@ -29,3 +29,5 @@ export function Select(props: SelectPropsType) {
             }} key={i.value}>{i.title}</div>)}</div>}
     </div>
 }
+
+export const Select = React.memo(SelectMemo)

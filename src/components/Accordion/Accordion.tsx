@@ -24,8 +24,7 @@ export type AccordionPropsType = {
     color?: string
 }
 
-
-export function Accordion(props: AccordionPropsType) {
+export function AccordionMemo(props: AccordionPropsType) {
 
    return (
         <div>
@@ -50,6 +49,8 @@ export function Accordion(props: AccordionPropsType) {
     // }
 
 }
+
+export const Accordion = React.memo(AccordionMemo)
 
 type AccordionTitlePropsType = {
     title: string

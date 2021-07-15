@@ -11,7 +11,7 @@ export type OnOffType = {
     onClick: (setOn: boolean) => void
 }
 
-export const OnOff = (props: OnOffType) => {
+export const OnOffMemo = (props: OnOffType) => {
 
     const boxStyle = {
         marginTop: "15px",
@@ -52,3 +52,4 @@ export const OnOff = (props: OnOffType) => {
     )
 }
 
+export const OnOff = React.memo(OnOffMemo)

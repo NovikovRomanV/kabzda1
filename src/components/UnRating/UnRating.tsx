@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 
-function UnRating() {
+function UnRatingMemo() {
     let [value, setValue] = useState(0);
     return (
         <div>
@@ -90,6 +90,8 @@ function UnRating() {
         // </div>
     )
 }
+
+export const UnRating = React.memo(UnRatingMemo)
 
 type StarPropsType = {
     selected: boolean

@@ -5,7 +5,7 @@ type PropsType = {
     titleValue: string
 }
 
-export function UnControlledAccordion(props: PropsType) {
+export function UnControlledAccordionMemo(props: PropsType) {
     // let [collapsed, setCollapsed] = useState(false)
     let [state, dispatch] = useReducer(reducer, {collapsed: false})
     return (
@@ -20,6 +20,8 @@ export function UnControlledAccordion(props: PropsType) {
         </div>
     )
 }
+
+export const UnControlledAccordion = React.memo(UnControlledAccordionMemo)
 
 type AccordionTitlePropsType = {
     title: string

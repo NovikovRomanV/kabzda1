@@ -2,11 +2,10 @@ import React, {useState} from "react";
 import s from './OnOff.module.css'
 
 type PropsType = {
-
     onChange: (on: boolean) => void
 }
 
-export const UnControlledOnOff = (props: PropsType) => {
+export const UnControlledOnOffMemo = (props: PropsType) => {
 
     let [on, setOn] = useState(true);
 
@@ -60,3 +59,4 @@ export const UnControlledOnOff = (props: PropsType) => {
     )
 }
 
+export const UnControlledOnOff = React.memo(UnControlledOnOffMemo)

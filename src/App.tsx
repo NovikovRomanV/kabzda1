@@ -7,6 +7,8 @@ import {UnControlledAccordion} from "./components/UnControlledAccordion/UnContro
 import UnRating from "./components/UnRating/UnRating";
 import {UnControlledOnOff} from "./components/OnOff/UnControlledOnOff";
 import {Select} from "./components/Select/Select";
+import {SetTimeoutExample} from "./stories/UseEffect.stories";
+import {Clock} from "./components/Clock/Clock";
 
 function App() {
 
@@ -16,48 +18,50 @@ function App() {
 
     return (
         <div className={"App"}>
-            <PageTitle title={'This is APP component'}/>
-            <PageTitle title={'My friends'}/>
-            Article 1
+            {/*<PageTitle title={'This is APP component'}/>*/}
+            {/*<PageTitle title={'My friends'}/>*/}
+            {/*Article 1*/}
 
-            <Accordion
-                titleValue={'Menu'}
-                collapsed={accordionCollapsed}
-                onClick={() => setAccordionCollapsed(!accordionCollapsed)}
-                items={[]}
-                color={'black'}
-                onChange={()=>{}}
-            />
-            <Accordion
-                titleValue={'Users'}
-                collapsed={accordionCollapsed}
-                onClick={() => setAccordionCollapsed(!accordionCollapsed)}
-                items={[]}
-                color={'black'}
-                onChange={()=>{}}
-            />
+            {/*<Accordion*/}
+            {/*    titleValue={'Menu'}*/}
+            {/*    collapsed={accordionCollapsed}*/}
+            {/*    onClick={() => setAccordionCollapsed(!accordionCollapsed)}*/}
+            {/*    items={[]}*/}
+            {/*    color={'black'}*/}
+            {/*    onChange={()=>{}}*/}
+            {/*/>*/}
+            {/*<Accordion*/}
+            {/*    titleValue={'Users'}*/}
+            {/*    collapsed={accordionCollapsed}*/}
+            {/*    onClick={() => setAccordionCollapsed(!accordionCollapsed)}*/}
+            {/*    items={[]}*/}
+            {/*    color={'black'}*/}
+            {/*    onChange={()=>{}}*/}
+            {/*/>*/}
 
-            Article 2
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            {/*<Rating value={0}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
-            Article 3
-            <UnControlledOnOff onChange={setOn}/> {on.toString()}
-            <UnControlledOnOff onChange={setOn}/> {on.toString()}
-            <OnOff on={on} onClick={setOn}/>
-            <OnOff on={on} onClick={setOn}/>
-            Article 4
-            <UnControlledAccordion titleValue={'Menu'} />
-            <UnControlledAccordion titleValue={'User'} />
+            {/*Article 2*/}
+            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
+            {/*/!*<Rating value={0}/>*!/*/}
+            {/*/!*<Rating value={1}/>*!/*/}
+            {/*/!*<Rating value={2}/>*!/*/}
+            {/*/!*<Rating value={3}/>*!/*/}
+            {/*/!*<Rating value={4}/>*!/*/}
+            {/*/!*<Rating value={5}/>*!/*/}
+            {/*Article 3*/}
+            {/*<UnControlledOnOff onChange={setOn}/> {on.toString()}*/}
+            {/*<UnControlledOnOff onChange={setOn}/> {on.toString()}*/}
+            {/*<OnOff on={on} onClick={setOn}/>*/}
+            {/*<OnOff on={on} onClick={setOn}/>*/}
+            {/*Article 4*/}
+            {/*<UnControlledAccordion titleValue={'Menu'} />*/}
+            {/*<UnControlledAccordion titleValue={'User'} />*/}
 
-            Article 5
-            <UnRating/>
+            {/*Article 5*/}
+            {/*<UnRating/>*/}
 
-            <Select value={"2"}  onChange={()=>{}} items={[{title: "Minsk", value: "1"}, {title: "Moscow", value: "2"}, {title: "Kiev", value: "3"}]}/>
+            {/*<Select value={"2"}  onChange={()=>{}} items={[{title: "Minsk", value: "1"}, {title: "Moscow", value: "2"}, {title: "Kiev", value: "3"}]}/>*/}
+            {/*<SetTimeoutExample/>*/}
+            <Clock/>
         </div>
     );
 }

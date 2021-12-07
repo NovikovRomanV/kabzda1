@@ -17,7 +17,7 @@ export const Clock = () => {
     useEffect(() => {
         setInterval(clock, 1000)
         setInterval(() => setCount(state => state + 1), 1000)
-    }, [count])
+    }, [])
 
     return <>
         {clock()}
